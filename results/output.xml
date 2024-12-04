@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-12-04T03:20:46.348779" rpa="false" schemaversion="5">
+<suite id="s1" name="LoginTest" source="C:\Users\ABCD\PycharmProjects\E2E_Robot_Framework\tests\LoginTest.robot">
+<test id="s1-t1" name="Login With Valid Username and Valid Password Test" line="11">
+<kw name="Open Browser and Navigate to URL" owner="commonKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:20:46.702304" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-04T03:20:46.702304" elapsed="6.558949"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-04T03:20:53.261431" elapsed="0.038272"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>../screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2024-12-04T03:20:53.299703" elapsed="0.000000"/>
+</kw>
+<doc>This is the keyword to opening a given url in the given browser</doc>
+<status status="PASS" start="2024-12-04T03:20:46.702304" elapsed="6.598399"/>
+</kw>
+<kw name="Enter Credentials" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:20:53.302313" level="INFO">Typing text 'intern@taqtics.co' into text field '//input[@id="email"]'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:20:53.301705" elapsed="0.340362"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:20:53.642067" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg time="2024-12-04T03:20:53.680870" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:20:53.642067" elapsed="0.175743"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2024-12-04T03:20:53.300703" elapsed="0.517107"/>
+</kw>
+<kw name="Click Login" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:20:53.818819" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:20:53.818819" elapsed="0.167070"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:20:53.818819" elapsed="0.167070"/>
+</kw>
+<kw name="Verify Dashboard" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PAGE_PROFILE_TEXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-04T03:20:53.987758" elapsed="0.960747"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:20:54.967983" level="INFO">${actual_url} = https://landmark.taqtics.co/dashboard</msg>
+<var>${actual_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-12-04T03:20:54.951385" elapsed="0.016598"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${actual_url}</arg>
+<arg>${EXPECTED_URL_DASHBOARD}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-04T03:20:54.969015" elapsed="0.001017"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:20:53.985889" elapsed="0.984143"/>
+</kw>
+<kw name="Close Browser and Store results" owner="commonKeywords" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Take Screenshot on failure</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-04T03:20:54.974123" elapsed="0.000943"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-04T03:20:54.975066" elapsed="2.271541"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:20:54.972015" elapsed="2.274592"/>
+</kw>
+<doc>This test case verifies the login functionality with Valid Username and Valid Password</doc>
+<tag>DRYRUN</tag>
+<tag>REGRESSION</tag>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-12-04T03:20:46.702304" elapsed="10.544303"/>
+</test>
+<test id="s1-t2" name="Login With Invalid Username and Invalid Password Test" line="18">
+<kw name="Open Browser and Navigate to URL" owner="commonKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:20:57.246607" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-04T03:20:57.246607" elapsed="8.259947"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-04T03:21:05.506554" elapsed="0.040967"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>../screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2024-12-04T03:21:05.547521" elapsed="0.001002"/>
+</kw>
+<doc>This is the keyword to opening a given url in the given browser</doc>
+<status status="PASS" start="2024-12-04T03:20:57.246607" elapsed="8.301916"/>
+</kw>
+<kw name="Enter Credentials" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:05.549517" level="INFO">Typing text 'intern@taqtics.co' into text field '//input[@id="email"]'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:05.549517" elapsed="0.320986"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:05.870503" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg time="2024-12-04T03:21:05.909179" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:05.870503" elapsed="0.209854"/>
+</kw>
+<arg>${Invalid_username}</arg>
+<arg>${Invalid_password}</arg>
+<status status="PASS" start="2024-12-04T03:21:05.548523" elapsed="0.531834"/>
+</kw>
+<kw name="Click Login" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:06.082839" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:06.081355" elapsed="0.135542"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:06.081355" elapsed="0.135542"/>
+</kw>
+<kw name="Verify Error Message" owner="LoginPage">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:16.851475" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-9.png"&gt;&lt;img src="../screenshots/selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-04T03:21:16.866726" level="FAIL">Element '(//div[@class='ant-message'] | //*[@id='email_help'])' not visible after 10 seconds.</msg>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-12-04T03:21:06.223913" elapsed="10.642813">Element '(//div[@class='ant-message'] | //*[@id='email_help'])' not visible after 10 seconds.</status>
+</kw>
+<msg time="2024-12-04T03:21:16.866726" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-12-04T03:21:06.223913" elapsed="10.642813"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>Log Error Message And Continue</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-04T03:21:16.866726" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:06.216897" elapsed="10.649829"/>
+</kw>
+<kw name="Close Browser and Store results" owner="commonKeywords" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Take Screenshot on failure</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-04T03:21:16.866726" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-04T03:21:16.866726" elapsed="2.202331"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:16.866726" elapsed="2.202331"/>
+</kw>
+<doc>This test case verifies the login functionality with Invalid Username and Invalid</doc>
+<tag>DRYRUN</tag>
+<tag>REGRESSION</tag>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-12-04T03:20:57.246607" elapsed="21.822450"/>
+</test>
+<test id="s1-t3" name="Login With Invalid Username and Valid Password Test" line="25">
+<kw name="Open Browser and Navigate to URL" owner="commonKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:19.069057" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-04T03:21:19.069057" elapsed="7.255456"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-04T03:21:26.325523" elapsed="0.044252"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>../screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2024-12-04T03:21:26.370912" elapsed="0.000000"/>
+</kw>
+<doc>This is the keyword to opening a given url in the given browser</doc>
+<status status="PASS" start="2024-12-04T03:21:19.069057" elapsed="7.302872"/>
+</kw>
+<kw name="Enter Credentials" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:26.372921" level="INFO">Typing text 'intern@taqtics.co' into text field '//input[@id="email"]'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:26.372921" elapsed="0.351605"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:26.724526" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg time="2024-12-04T03:21:26.777905" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:26.724526" elapsed="0.115885"/>
+</kw>
+<arg>${Invalid_username}</arg>
+<arg>${Valid_password}</arg>
+<status status="PASS" start="2024-12-04T03:21:26.371929" elapsed="0.468482"/>
+</kw>
+<kw name="Click Login" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:26.840411" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:26.840411" elapsed="0.137895"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:26.840411" elapsed="0.137895"/>
+</kw>
+<kw name="Verify Error Message" owner="LoginPage">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:37.355944" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-10.png"&gt;&lt;img src="../screenshots/selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-04T03:21:37.355944" level="FAIL">Element '(//div[@class='ant-message'] | //*[@id='email_help'])' not visible after 10 seconds.</msg>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-12-04T03:21:26.978306" elapsed="10.377638">Element '(//div[@class='ant-message'] | //*[@id='email_help'])' not visible after 10 seconds.</status>
+</kw>
+<msg time="2024-12-04T03:21:37.355944" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-12-04T03:21:26.978306" elapsed="10.377638"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>Log Error Message And Continue</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-04T03:21:37.355944" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:26.978306" elapsed="10.377638"/>
+</kw>
+<kw name="Close Browser and Store results" owner="commonKeywords" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Take Screenshot on failure</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-04T03:21:37.355944" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-04T03:21:37.355944" elapsed="2.234118"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:37.355944" elapsed="2.234118"/>
+</kw>
+<doc>This test case verifies the login functionality with Invalid Username and Valid Password</doc>
+<tag>DRYRUN</tag>
+<tag>REGRESSION</tag>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-12-04T03:21:19.069057" elapsed="20.521005"/>
+</test>
+<test id="s1-t4" name="Login With Valid Username and Invalid Password Test" line="32">
+<kw name="Open Browser and Navigate to URL" owner="commonKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:39.590062" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-04T03:21:39.590062" elapsed="10.474416"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.064478" elapsed="0.050619"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>../screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.115097" elapsed="0.000000"/>
+</kw>
+<doc>This is the keyword to opening a given url in the given browser</doc>
+<status status="PASS" start="2024-12-04T03:21:39.590062" elapsed="10.525035"/>
+</kw>
+<kw name="Enter Credentials" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:50.115097" level="INFO">Typing text '' into text field '//input[@id="email"]'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.115097" elapsed="0.182309"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:50.297406" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg time="2024-12-04T03:21:50.340656" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.297406" elapsed="0.183079"/>
+</kw>
+<arg>${Valid_username}</arg>
+<arg>${Invalid_password}</arg>
+<status status="PASS" start="2024-12-04T03:21:50.115097" elapsed="0.365388"/>
+</kw>
+<kw name="Click Login" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:50.481514" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.481514" elapsed="0.139686"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:50.481514" elapsed="0.139686"/>
+</kw>
+<kw name="Verify Error Message" owner="LoginPage">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.621200" elapsed="0.073313"/>
+</kw>
+<msg time="2024-12-04T03:21:50.694513" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.621200" elapsed="0.073313"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log Error Message And Continue" owner="LoginPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:50.720664" level="INFO">${error_message} = Please input your email!</msg>
+<var>${error_message}</var>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.694513" elapsed="0.026151"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-04T03:21:50.720664" level="INFO">Error message displayed: Please input your email!</msg>
+<arg>Error message displayed: ${error_message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.720664" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:50.694513" elapsed="0.026151"/>
+</kw>
+<arg>${status}</arg>
+<arg>Log Error Message And Continue</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.694513" elapsed="0.026151"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:50.621200" elapsed="0.099464"/>
+</kw>
+<kw name="Close Browser and Store results" owner="commonKeywords" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Take Screenshot on failure</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.736290" elapsed="0.001147"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-04T03:21:50.738466" elapsed="2.162552"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:50.736290" elapsed="2.164728"/>
+</kw>
+<doc>This test case verifies the login functionality with Valid Username and Invalid Password</doc>
+<tag>DRYRUN</tag>
+<tag>REGRESSION</tag>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-12-04T03:21:39.590062" elapsed="13.310956"/>
+</test>
+<test id="s1-t5" name="Login with Empty Username and Empty Password Test" line="39">
+<kw name="Open Browser and Navigate to URL" owner="commonKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:52.901018" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-04T03:21:52.901018" elapsed="6.412480"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-04T03:21:59.314320" elapsed="0.033099"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>../screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2024-12-04T03:21:59.347419" elapsed="0.000000"/>
+</kw>
+<doc>This is the keyword to opening a given url in the given browser</doc>
+<status status="PASS" start="2024-12-04T03:21:52.901018" elapsed="6.446401"/>
+</kw>
+<kw name="Enter Credentials" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:59.347419" level="INFO">Typing text '' into text field '//input[@id="email"]'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:59.347419" elapsed="0.187905"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:59.535324" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg time="2024-12-04T03:21:59.581336" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:59.535324" elapsed="0.113258"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-12-04T03:21:59.347419" elapsed="0.301163"/>
+</kw>
+<kw name="Click Login" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:21:59.648582" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:21:59.648582" elapsed="4.202275"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:21:59.648582" elapsed="4.202275"/>
+</kw>
+<kw name="Verify Error Message" owner="LoginPage">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-04T03:22:03.850857" elapsed="0.067196"/>
+</kw>
+<msg time="2024-12-04T03:22:03.918053" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-12-04T03:22:03.850857" elapsed="0.067196"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log Error Message And Continue" owner="LoginPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:03.951220" level="INFO">${error_message} = Please input your email!</msg>
+<var>${error_message}</var>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:22:03.918053" elapsed="0.033167"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-04T03:22:03.951220" level="INFO">Error message displayed: Please input your email!</msg>
+<arg>Error message displayed: ${error_message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-04T03:22:03.951220" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:22:03.918053" elapsed="0.033167"/>
+</kw>
+<arg>${status}</arg>
+<arg>Log Error Message And Continue</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-04T03:22:03.918053" elapsed="0.033167"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:22:03.850857" elapsed="0.100363"/>
+</kw>
+<kw name="Close Browser and Store results" owner="commonKeywords" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Take Screenshot on failure</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-04T03:22:03.951220" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-04T03:22:03.951220" elapsed="2.210868"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:22:03.951220" elapsed="2.210868"/>
+</kw>
+<doc>This test case verifies the login functionality with Empty Username and Empty Password</doc>
+<tag>DRYRUN</tag>
+<tag>REGRESSION</tag>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-12-04T03:21:52.901018" elapsed="13.261070"/>
+</test>
+<test id="s1-t6" name="Login with Empty Username and Non-Empty Password Test" line="46">
+<kw name="Open Browser and Navigate to URL" owner="commonKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:06.162088" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-04T03:22:06.162088" elapsed="8.019559"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.181647" elapsed="0.040052"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>../screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.221699" elapsed="0.000000"/>
+</kw>
+<doc>This is the keyword to opening a given url in the given browser</doc>
+<status status="PASS" start="2024-12-04T03:22:06.162088" elapsed="8.060611"/>
+</kw>
+<kw name="Enter Credentials" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:14.225698" level="INFO">Typing text '' into text field '//input[@id="email"]'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.225698" elapsed="0.192387"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:14.419114" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg time="2024-12-04T03:22:14.503281" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.419114" elapsed="0.243279"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2024-12-04T03:22:14.224701" elapsed="0.437692"/>
+</kw>
+<kw name="Click Login" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:14.663954" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.663954" elapsed="0.131345"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:22:14.663390" elapsed="0.131909"/>
+</kw>
+<kw name="Verify Error Message" owner="LoginPage">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.795299" elapsed="0.033766"/>
+</kw>
+<msg time="2024-12-04T03:22:14.829065" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.795299" elapsed="0.033766"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log Error Message And Continue" owner="LoginPage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:14.884261" level="INFO">${error_message} = </msg>
+<var>${error_message}</var>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.829065" elapsed="0.055196"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-12-04T03:22:14.884261" level="INFO">Error message displayed: </msg>
+<arg>Error message displayed: ${error_message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.884261" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:22:14.829065" elapsed="0.055196"/>
+</kw>
+<arg>${status}</arg>
+<arg>Log Error Message And Continue</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.829065" elapsed="0.056237"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:22:14.795299" elapsed="0.090003"/>
+</kw>
+<kw name="Close Browser and Store results" owner="commonKeywords" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Take Screenshot on failure</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.885302" elapsed="0.000962"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-04T03:22:14.886264" elapsed="2.207177"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:22:14.885302" elapsed="2.208139"/>
+</kw>
+<doc>This test case verifies the login functionality with Empty Username and Non-Empty Password</doc>
+<tag>DRYRUN</tag>
+<tag>REGRESSION</tag>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-12-04T03:22:06.162088" elapsed="10.931353"/>
+</test>
+<test id="s1-t7" name="Login with Non-Empty Username and Empty Password Test" line="53">
+<kw name="Open Browser and Navigate to URL" owner="commonKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:21.146850" level="INFO">Opening browser 'chrome' to base url 'https://landmark.taqtics.co'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-04T03:22:17.093441" elapsed="12.492953"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-04T03:22:29.586394" elapsed="0.045078"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>../screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2024-12-04T03:22:29.632469" elapsed="0.001002"/>
+</kw>
+<doc>This is the keyword to opening a given url in the given browser</doc>
+<status status="PASS" start="2024-12-04T03:22:17.093441" elapsed="12.540030"/>
+</kw>
+<kw name="Enter Credentials" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:29.635475" level="INFO">Typing text 'intern@taqtics.co' into text field '//input[@id="email"]'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:22:29.635475" elapsed="0.342001"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:29.978500" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg time="2024-12-04T03:22:30.026665" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:22:29.977476" elapsed="0.132006"/>
+</kw>
+<arg>${username}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-12-04T03:22:29.634474" elapsed="0.475008"/>
+</kw>
+<kw name="Click Login" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:30.109482" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-04T03:22:30.109482" elapsed="0.162963"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:22:30.109482" elapsed="0.162963"/>
+</kw>
+<kw name="Verify Error Message" owner="LoginPage">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-12-04T03:22:40.806325" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/selenium-screenshot-11.png"&gt;&lt;img src="../screenshots/selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-04T03:22:40.806325" level="FAIL">Element '(//div[@class='ant-message'] | //*[@id='email_help'])' not visible after 10 seconds.</msg>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-12-04T03:22:30.277135" elapsed="10.529190">Element '(//div[@class='ant-message'] | //*[@id='email_help'])' not visible after 10 seconds.</status>
+</kw>
+<msg time="2024-12-04T03:22:40.806325" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${ERROR_POPUP_LOCATOR}</arg>
+<arg>timeout=10</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-12-04T03:22:30.272445" elapsed="10.533880"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>Log Error Message And Continue</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-12-04T03:22:40.806325" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:22:30.272445" elapsed="10.533880"/>
+</kw>
+<kw name="Close Browser and Store results" owner="commonKeywords" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Take Screenshot on failure</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-12-04T03:22:40.806325" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-12-04T03:22:40.806325" elapsed="2.250107"/>
+</kw>
+<status status="PASS" start="2024-12-04T03:22:40.806325" elapsed="2.250107"/>
+</kw>
+<doc>This test case verifies the login functionality with Non-Empty Username and Empty Password</doc>
+<tag>DRYRUN</tag>
+<tag>REGRESSION</tag>
+<tag>SMOKE</tag>
+<status status="PASS" start="2024-12-04T03:22:17.093441" elapsed="25.962991"/>
+</test>
+<status status="PASS" start="2024-12-04T03:20:46.348779" elapsed="116.707653"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="0" skip="0">DRYRUN</stat>
+<stat pass="7" fail="0" skip="0">REGRESSION</stat>
+<stat pass="7" fail="0" skip="0">SMOKE</stat>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="LoginTest">LoginTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
